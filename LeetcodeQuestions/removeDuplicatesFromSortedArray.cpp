@@ -4,6 +4,7 @@ using namespace std;
 #include<unordered_map>
 #include<algorithm>
 #include<unordered_set>
+#include<set>
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {

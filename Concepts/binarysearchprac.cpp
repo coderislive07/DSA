@@ -65,22 +65,32 @@
 // }
 
 // missing no 
-// class Solution {
-// public:
-//     int missingNumber(vector<int>& nums) {
-//         int missingno=0;
-//         for(int i=0;i<=nums.size();i++)
-//         {
-//             missingno=missingno^i;
+#include <iostream>
+#include <vector>
+using namespace std;
 
-//         }
-//         for(int num:nums)
-//         {
-//             missingno=missingno^num;
-//         }
-//         return missingno;
-//     }
-// }; 
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int missingno = 0;
+        for (int i = 0; i <= nums.size(); i++) {
+            missingno ^= i;
+        }
+        cout<<missingno;
+        for (int num : nums) {
+            missingno ^= num;
+        }
+        return missingno;
+    
+    }
+};
+int main() {
+    Solution s;
+    vector<int> nums = {0, 1, 3}; // Example input
+    int result = s.missingNumber(nums);
+    cout << "The missing number is: " << result << endl;
+    return 0;
+}
 // or 
 // class Solution {
 // public:
