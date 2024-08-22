@@ -1,30 +1,39 @@
 #include<iostream>
-// using namespace std;
-// int pow(int a , int b)
-// {
-//     if(b==0)
-//     {
-//         return 1;
-//     }
-//     if(b==1)
-//     {
-//         return a;
-//     }
-//     int ans=pow(a,b/2);
-//     if(b%2==0)
-//     {
-//         return ans*ans;
-//     }
-//     else
+using namespace std;
 
-//     {
-//         return a*ans*ans;
-//     }
+int main() {
+    int n;
+    cin >> n;
 
-// }
-// int main()
-// {
-//     int a=2;
-//     int b=3;
-//     pow(a,b);
-// }
+    int hundreds = 0;
+    int fifties = 0;
+    int twenties = 0;
+    int ones = 0;
+    int p = 1;
+
+    while (n != 0) {
+        switch (p) {
+            case 1:
+                hundreds = n / 100;
+                n = n - hundreds * 100;
+                break;
+            case 2:
+                fifties = n / 50;
+                n = n - fifties * 50;
+                break;
+            case 3:
+                twenties = n / 20;
+                n = n - twenties * 20;
+                break;
+            case 4:
+                ones = n / 1;
+                n = n - ones * 1;
+                break;
+        }
+        p++;
+    }
+      cout<<"Hundred notes are "<<hundreds<<endl;
+    cout<<"fifties notes are "<<fifties<<endl;
+    cout<<"twenties notes are "<<twenties<<endl;
+    cout<<"Ones notes are "<<ones<<endl;
+}
